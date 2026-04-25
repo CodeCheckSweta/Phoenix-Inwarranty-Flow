@@ -24,12 +24,18 @@ jobs:
              npm install -g newman
              npm install -g newman-reporter-htmlextra
 
-      - name: Run the postman collection with newman
+      - name: Run the Postman collection with Newman
         run: |
              newman run 'Inwaranty-flow Collection.postman_collection.json' \
              -e QA.postman_environment.json \
              -d testdata.csv \
              -r cli,htmlextra
+
+      - name: Newman Report
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: Newman Report
+          path: newman/*.html
              
 
              
