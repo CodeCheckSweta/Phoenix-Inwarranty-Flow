@@ -29,8 +29,9 @@ jobs:
              newman run 'Inwaranty-flow Collection.postman_collection.json' \
              -e QA.postman_environment.json \
              -d testdata.csv \
-             -r cli,htmlextra
-
+             -r cli,htmlextra \
+             --reporter-htmlextra-export ./newman/index.html
+             
       - name: Newman Report
         if: always() # ensure that the archive is executed irrespective of whether the previous step has failed or not!
         uses: actions/upload-artifact@v7.0.1
