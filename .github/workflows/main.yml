@@ -10,7 +10,7 @@ on:
      
 jobs:
   run-postman-tests:
-    runs-on: ec2-github-runner 
+    runs-on: ubuntu-latest     #ec2-github-runner 
 
     steps:
       - name: Checkout the code
