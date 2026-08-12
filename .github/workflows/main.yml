@@ -1,4 +1,4 @@
-name : postman Collection Workflow
+name: Postman Collection Workflow
 
 on:
    push:
@@ -15,7 +15,22 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v6.0.2
-      - name: install Nodejs and npn
+      # Temporary diagnostic step to confirm that the Postman
+      # collection is available in the GitHub Actions workspace
+      - name: Verify Postman files
+        run: |
+          echo "========== CURRENT DIRECTORY =========="
+          pwd
+
+          echo "========== ROOT FILES =========="
+          ls -la
+
+          echo "========== POSTMAN FILES =========="
+          find . -type f | grep -i "postman" || true
+
+          echo "========== COLLECTION FILES =========="
+          find . -type f | grep -i "collection" || true
+      - name: Install Node.js and npn
         uses: actions/setup-node@v6.4.0
         with:
           node-version: '22'
@@ -38,8 +53,9 @@ jobs:
         with:
           name: Newman Report
           path: newman/*.html
+          if-no-files-found: ignore
              
-      - name: Creating github page branch
+      - name: Creating GitHub Pages branch
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
@@ -59,5 +75,5 @@ jobs:
           from: ${{ secrets.EMAIL_USERNAME}}
           body: |
                 Hi All,
-                Phoenix Inwarranty flow tests have been executed. The Report has been published, and the URL 
+                Phoenix In-warranty flow tests have been executed. The Report has been published, and the URL 
                 is: https://codechecksweta.github.io/Phoenix-Inwarranty-Flow/
