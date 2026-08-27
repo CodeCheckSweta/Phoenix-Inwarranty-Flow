@@ -19,7 +19,7 @@
 
 ## 📌 Overview
 
-**Phoenix In-Warranty Flow** is an API automation POC demonstrating how **Postman collections can be integrated into a CI/CD pipeline using Newman and GitHub Actions**.
+**Phoenix In-Warranty Flow** is an API automation POC that demonstrates how **Postman collections can integrate into a CI/CD pipeline using Newman and GitHub Actions**.
 
 The project validates an end-to-end in-warranty workflow using reusable API requests, environment variables, CSV-driven test data, authentication/token validation, negative scenarios, and JSON schema validation.
 
@@ -62,7 +62,7 @@ The automation pipeline can be triggered automatically, manually, or on a schedu
                     │   GitHub Repository  │
                     └──────────┬───────────┘
                                │
-                 Push / Manual / Scheduled
+                    Push / Manual / Scheduled
                                │
                                ▼
                     ┌──────────────────────┐
@@ -95,7 +95,7 @@ The automation pipeline can be triggered automatically, manually, or on a schedu
         └────────────────┘             └────────────────┘
 ```
 
-The workflow is configured for push, manual, and scheduled execution and uploads the generated Newman report as an artifact. fileciteturn11file0L2-L5
+The workflow supports push, manual, and scheduled execution and uploads the generated Newman report as an artifact.
 
 ---
 
