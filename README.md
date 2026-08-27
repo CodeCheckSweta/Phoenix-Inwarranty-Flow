@@ -260,7 +260,7 @@ Stakeholder Notification
 This approach enables automated quality feedback without requiring testers to manually start the collection or distribute reports after every execution.
 
 ---
-
+<!----
 ## 🚀 Potential Enhancements
 
 - [ ] Add separate QA/UAT/Production environment configurations
@@ -273,7 +273,7 @@ This approach enables automated quality feedback without requiring testers to ma
 - [ ] Containerise Newman execution with Docker
 
 ---
-
+--->
 ## 👩‍💻 Author
 
 **Sweta Singh — Senior QA Engineer / SDET**
