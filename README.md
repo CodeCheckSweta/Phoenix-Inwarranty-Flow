@@ -59,7 +59,7 @@ The automation pipeline can be triggered automatically, manually, or on a schedu
 
 ```text
                     ┌──────────────────────┐
-                    │   GitHub Repository   │
+                    │   GitHub Repository  │
                     └──────────┬───────────┘
                                │
                  Push / Manual / Scheduled
